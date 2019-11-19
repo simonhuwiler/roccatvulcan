@@ -17,7 +17,7 @@ or clone repository
 **Important**: Close your Roccat Swarm App (right click -> close)
 ```javascript
 //Load module
-const RoccatVulcan = require('./roccatvulcan');
+const RoccatVulcan = require('roccatvulcan');
 
 //Init Keyboard
 keyboard = new RoccatVulcan({
