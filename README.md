@@ -9,8 +9,8 @@ alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 
 ## Installation
 Install per npm  
-`npm install roccatvulcan`
-or clone repository
+`npm install roccatvulcan`  
+or clone repository  
 `git clone git@github.com:simonhuwiler/roccatvulcan.git`
 
 ## Usage
