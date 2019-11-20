@@ -126,6 +126,11 @@ module.exports = class RoccatVulkan
   {
     this.currentColors = val;
   }
+
+  getGrid()
+  {
+    return this.grid.KEYGRID;
+  }
   
   fillAll(color)
   {
