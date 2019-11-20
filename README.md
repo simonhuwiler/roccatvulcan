@@ -51,35 +51,61 @@ Callback when key pressed
 ## Render-Methods
 When ever you change the colors of a key, the api will store every key in the memory. The api will not send the new colors to the keyboard by itself, you need to **render** the current state. Two methods will help you:
 ### Single rendering
-`keyboard.render()`  
+```javascript
+keyboard.render()
+```
 This will send all the current colors to the keyboard
 ### Auto rendering
-`keyboard.renderStart(50);`  
+```javascript
+keyboard.renderStart(50);
+```
 This will start continous rendering every 50 millisecond.  
   
-`keyboard.renderStop();`  
-This stops the auto renderer.
+```javascript
+keyboard.renderStop();
+```
+Stops the auto renderer.
 
 ## Coloring-Methods
-### `fillAll(color)`
-Will colorize each key. **Be aware**: Only hex-colors are supported. No `blue` or `black`  
-`keyboard.fillAll('#ffcc00');`
+**Fill all**
+```javascript
+fillAll(color)
+```
+Will colorize each key. **Be aware**: Only hex-colors are supported. No `blue` or `black`.  
+```javascript
+// Example
+keyboard.fillAll('#ffcc00');
+```
 
-### `updateKeys(keys, color[, backgroundColor])`
+**Update Keys**
+```javascript
+updateKeys(keys, color[, backgroundColor])
+```
 Will only update the given keys, all other keys will remain the same. Except: `backgroundColor` is given!  
 Params:
 * `keys`: List of Keys
 * `color`: New color in hex
 * `backgroundColor`: optional. Changes the color of all other keys  
 
-**Example**  
-`keyboard.updateKeys(['W', 'A', 'S' ,'D'], '#ff0000')`
 
-### `updateKey(key, colors[, backgroundColor])`
-Same as `updateKeys` but takes only one key.  
-`keyboard.updateKeys('W', '#ff0000')`
+```javascript
+// Example
+keyboard.updateKeys(['W', 'A', 'S' ,'D'], '#ff0000')
+```
+**Update Key**
+```javascript
+updateKey(key, colors[, backgroundColor])
+```
+Same as `updateKeys` but takes only one key.
+```javascript
+// Example
+keyboard.updateKeys('W', '#ff0000')
+```
 
-### `animateKeys(keys, colorFrom, colorTo, duration)`
+**Animate Keys**  
+```javascript
+animateKeys(keys, colorFrom, colorTo, duration)
+```
 Creates a transition between two colors. Be aware: Auto Rendering needs to be running!  
 Params:
 * `keys`: List of Keys to animate
@@ -87,37 +113,64 @@ Params:
 * `colorTo`: End Color
 * `duration`: Duration in Miliseconds
 
-**Example**  
-`keyboard.animateKeys(['W', 'A', 'S', 'D'], '#000000', '#ff0000', 1000);`
+```javascript
+// Example
+keyboard.animateKeys(['W', 'A', 'S', 'D'], '#000000', '#ff0000', 1000);
+```
 
-### `animateKey(key, colorFrom, colorTo, duration)`
-Same as above with single key  
-`keyboard.animateKeys('W', '#000000', '#ff0000', 1000);`
+**Animate Key**
+```javascript
+animateKey(key, colorFrom, colorTo, duration)
+```
+Same as above with single key
+```javascript
+// Example
+keyboard.animateKeys('W', '#000000', '#ff0000', 1000);
+```
 
-### `write(text, color, keyOffset)` //Experimental!
-Writes given Text on the keyboard. **Only a few keys are currently supported! Have a look at** `keyboardlayout/ch-de/alphabet.js`  
-Example:  
-`keyboard.write("ANNA", '#ff0000', 20)`
+**Write Text (Experimental!)**
+```javascript
+write(text, color, keyOffset)`
+```
+Writes given Text on the keyboard. **Only a few keys are currently supported! Have a look at** 
+[keyboardlayout/ch-de/alphabet.js](./src/keyboardlayout/ch-de/alphabet.js)  
+```javascript
+// Example
+keyboard.write("ANNA", '#ff0000', 20)
+```
 
-### `marquee(text, color, speed)` //Experimental!
-Writes text the same way as `write` but let the text scroll over the keyboard. Like the old HTML-Tag `marquee`. **Only a few keys are currently supported! Have a look at** `keyboardlayout/ch-de/alphabet.js`  
-`keyboard.marquee("ANNA", '#ff0000', 200);`
+**Marquee (Experimental!)**
+```javascript
+marquee(text, color, speed)
+```
+
+Writes text the same way as `write` but let the text scroll over the keyboard. Like the old HTML-Tag `marquee`. **Only a few keys are currently supported! Have a look at** [keyboardlayout/ch-de/alphabet.js](./src/keyboardlayout/ch-de/alphabet.js)
+```javascript
+// Example
+keyboard.marquee("ANNA", '#ff0000', 200);
+```
 
 ## AnimationQueue
 You can queue animations and run them at will. Use the AnimationQueue for that purpose.  
 
 ### Add Animation to Queue
-`keyboard.animationQueueAdd(animation, timeout);`  
+```javascript
+keyboard.animationQueueAdd(animation, timeout);
+```
 Params:
 * `animation`: Function which will be triggered.
 * `timeout`: After how many milliseconds **after the last animation** this animation should be triggered
 
 ### Start Animation Queue
-`keyboard.animationQueueStart(onFinish)`  
+```javascript
+keyboard.animationQueueStart(onFinish)
+```
 Starts the Animation Queue and will trigger `onFinish` after all animations have finished
 
 ### Stop and Clear Animation Queue
-`keyboard.animationQueueStop()`  
+```javascript
+keyboard.animationQueueStop()
+```
 
 ### Example
 This will change the colors of the Keys AWSD.
@@ -148,10 +201,26 @@ The data parameter is an object with two states:
 
 
 ## Turn of a Key
-To turn of a key, you need to send the color (#000000) black to the keyboard.  
-`keyboard.fillAll('#000000');`
+To turn of a key, you need to send the color (#000000) black to the keyboard.
+```javascript
+keyboard.fillAll('#000000');
+```
 
-## Project made with this library
-* DataViz about eSports: https://github.com/simonhuwiler/dataviz_keyboard
+## Grid
+Sometimes you want to access your key by its position on the keyboard, instead of its value. Use the `grid` where each key is in a cell.  
+```javascript
+var grid = keyboard.getGrid();
+```  
+Returns a multi array. Have a look at the file [src/keyboardlayout/ch-de/grid.js](./src/keyboardlayout/ch-de/grid.js)  
+
+To change the color of the first row (`ESC, F1, F2`...) use it this way:  
+```javascript
+var grid = keyboard.getGrid();
+keyboard.animateKeys(grid[0], '#000000', '#ff0000', 1000)
+```
+
+## Projects made with this library
+* `AWSD - The Rise of eSports` DataViz about eSports: https://github.com/simonhuwiler/dataviz_keyboard
+* `FruitSalad`, a Game for a keyboard: https://github.com/simonhuwiler/fruitsalad_game
 
 Write me to be listed here!
