@@ -220,7 +220,7 @@ keyboard.animateKeys(grid[0], '#000000', '#ff0000', 1000)
 ```
 
 ## Projects made with this library
-* `AWSD - The Rise of eSports` DataViz about eSports: https://github.com/simonhuwiler/dataviz_keyboard
+* `WASD - The Rise of eSports` DataViz about eSports: https://github.com/simonhuwiler/dataviz_keyboard
 * `FruitSalad`, a Game for a keyboard: https://github.com/simonhuwiler/fruitsalad_game
 
 Write me to be listed here!
