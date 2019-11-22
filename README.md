@@ -21,7 +21,6 @@ const RoccatVulcan = require('roccatvulcan');
 
 //Init Keyboard
 keyboard = new RoccatVulcan({
-  productId: 12440,
   layout: 'ch-de',
   ready: () => {
     console.log("Keyboard is ready!");
@@ -36,16 +35,16 @@ keyboard = new RoccatVulcan({
 ```
 
 ## Init Parameters
-`productId`  
-To connect with your keyboard, this library needs the ID of your product. Default `12440` works fine for the Roccat Vulcan 120. If you have another Vulcan, you need to change this. If the keyboard is not found, you will see all possible devices in your terminal. Copy the Id of the corresponding one.
+`productId` (optional)  
+The Api will search automaticly for your keyboard. Although it may be possible, that your keyboard version is unknown. Then you need to provide a productId. If the keyboard is not found, you will see all possible devices in your terminal. Copy the Id of the corresponding one.
 
 `layout`  
 The keyboard layout. At the moment only `ch-de` supported. Duplicate the folder `keyboardlayout/ch-de` and make your own!
 
-`ready`  
+`ready` (optional)  
 Callback after keyboard is initialised.
 
-`onData`  
+`onData` (optional) 
 Callback when key pressed
 
 ## Render-Methods

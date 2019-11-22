@@ -27,8 +27,8 @@ module.exports = class RoccatVulkan
     const allDevices = HID.devices();
 
     //Filter Roccat
-    const productId = options.productId ? options.productId : consts.PRODUCTID;
-    const roccatDevices = allDevices.filter(d => d.productId === productId)
+    const productIds = options.productId ? [options.productId] : consts.PRODUCTIDS;
+    const roccatDevices = allDevices.filter(d => productIds.includes(d.productId))
 
     if(options.onData)
     {
