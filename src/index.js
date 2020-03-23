@@ -32,7 +32,7 @@ module.exports = class RoccatVulkan
 
     if(options.onData)
     {
-      //Register Read Event. Search for Intterface 1 and usagePage 10. Why? Know Idea. If this not reacts to your keyboard, try to register to other device
+      //Register Read Event. Search for Interface 1 and usagePage 10. Why? Know Idea. If this not reacts to your keyboard, try to register to other device
       const keyDevice = roccatDevices.filter(d => d.interface === 1 && d.usagePage === 10)
       if(keyDevice.length > 0)
       {
