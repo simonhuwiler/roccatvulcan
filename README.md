@@ -39,7 +39,11 @@ keyboard = new RoccatVulcan({
 The Api will search automaticly for your keyboard. Although it may be possible, that your keyboard version is unknown. Then you need to provide a productId. If the keyboard is not found, you will see all possible devices in your terminal. Copy the Id of the corresponding one.
 
 `layout`  
-The keyboard layout. At the moment only `ch-de` supported. Duplicate the folder `keyboardlayout/ch-de` and make your own!
+The keyboard layout. Supported layouts:  
+  * `ch-de` for Swiss
+  * `de-de` for Germany (thanks to Erik!)
+  
+Add your own support by duplicating and editing the folder `keyboardlayout/ch-de`!
 
 `ready` (optional)  
 Callback after keyboard is initialised.
