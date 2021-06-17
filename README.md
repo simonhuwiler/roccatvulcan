@@ -225,5 +225,6 @@ keyboard.animateKeys(grid[0], '#000000', '#ff0000', 1000)
 ## Projects made with this library
 * `WASD - The Rise of eSports` DataViz about eSports: https://github.com/simonhuwiler/dataviz_keyboard
 * `FruitSalad`, a Game for a keyboard: https://github.com/simonhuwiler/fruitsalad_game
+* `Snake Vulcan`, the famous game, made for a keyboard: https://github.com/kiarahd/snake-vulcan
 
 Write me to be listed here!
