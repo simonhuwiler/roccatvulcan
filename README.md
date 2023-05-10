@@ -102,7 +102,7 @@ updateKey(key, colors[, backgroundColor])
 Same as `updateKeys` but takes only one key.
 ```javascript
 // Example
-keyboard.updateKeys('W', '#ff0000')
+keyboard.updateKey('W', '#ff0000')
 ```
 
 **Animate Keys**  
