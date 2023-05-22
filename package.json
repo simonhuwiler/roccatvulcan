@@ -1,6 +1,6 @@
 {
   "name": "roccatvulcan",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Control your Roccat Vulcan Keyboard",
   "main": "src/index.js",
   "scripts": {
@@ -25,6 +25,6 @@
   },
   "homepage": "https://github.com/simonhuwiler/roccatvulcan#readme",
   "dependencies": {
-    "node-hid": "^0.7.9"
+    "node-hid": "^2.1.2"
   }
 }
